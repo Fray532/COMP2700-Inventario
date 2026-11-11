@@ -44,7 +44,6 @@ def registrar_evento(usuario, accion, resultado, **detalles):
         "resultado": resultado
     }
 
-    # Solo se incluyen detalles permitidos, nunca contraseñas ni hashes.
     for campo in ("producto", "anterior", "nueva"):
         if campo in detalles:
             evento[campo] = detalles[campo]
@@ -103,7 +102,6 @@ def consultar_inventario(sesion):
 
 
 def modificar_cantidad(sesion, identificador, entrada):
-    # Los permisos se comprueban dentro de la función.
     if not sesion_valida(sesion):
         print("Modificación rechazada: debe iniciar sesión.")
         registrar_evento(
@@ -120,7 +118,6 @@ def modificar_cantidad(sesion, identificador, entrada):
         )
         return False
 
-    # La entrada de la terminal debe representar un número entero.
     try:
         cantidad = int(entrada)
     except (ValueError, TypeError):
