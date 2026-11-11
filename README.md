@@ -4,7 +4,7 @@ Estudiante: Frazier Gomez Guzman
 
 **Descripción**
 
-Este proyecto es una aplicación de inventario en Python que se utiliza desde la terminal. Trabajé con la base suministrada por el profesor, base_estudiante.zip, para corregir sus problemas de seguridad. Los datos y las cuentas son ficticios.
+Este proyecto es una aplicación de inventario en Python que se utiliza desde la terminal. Trabajé con la base, base_estudiante.zip, para corregir sus problemas de seguridad. Los datos y las cuentas son ficticios.
 
 Admin puede consultar el inventario y modificar cantidades. User solamente puede consultar. Las cantidades deben ser números enteros entre 0 y 1000, incluyendo ambos límites.
 
@@ -24,7 +24,7 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-Cuando el programa lo solicite, escriba su nombre e ingrese con una de las cuentas de prueba.
+Cuando el programa lo pide, escriba su nombre e ingrese con una de las cuentas de prueba.
 
 **Cuentas ficticias de prueba**
 
@@ -100,8 +100,6 @@ Apliqué los cambios y ejecuté las pruebas en mi computadora para comprobar que
 
 Los permisos funcionan dentro del programa. Una persona que pueda editar los archivos locales también podría cambiar los usuarios, el inventario o la auditoría.
 
-La sesión se guarda como un diccionario. Si alguien puede ejecutar código dentro del mismo proceso, podría cambiar sus datos.
-
 El proyecto no tiene MFA, cifrado del inventario ni protección contra cambios externos al log.
 
-Si falla el registro de auditoría, aparece un mensaje de error, pero el cambio del inventario puede haberse guardado. Esto se podría mejorar haciendo que el cambio y su registro se guarden juntos.
+Si falla el registro de auditoría, aparece un mensaje de error, pero el cambio del inventario puede haberse guardado.
